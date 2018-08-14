@@ -31,15 +31,16 @@ class SQLHandler(object):
             uuid = self.uuid()
         self.conn.execute('''INSERT INTO messages (id, content) 
                              VALUES (?, ?)''', [uuid, content])
+        return uuid
 
     def threaded_insert(self):
         item = self.insert_queue.get()
-        self.insert(item)
+        uuid = self.insert(item)
         self.insert_queue.task_done()
+        return uuid
 
     def submit(self, content):
         self.insert_queue.put(content)
-        thread = threading.Thread(target=self.threaded_insert())
-        thread.start()
-        thread.join()
+        uuid = self.threaded_insert()
         self.conn.commit()
+        return uuid

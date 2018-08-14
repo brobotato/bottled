@@ -97,3 +97,7 @@ ENV/
 /site
 
 .log
+
+# Project specific
+
+messages.db

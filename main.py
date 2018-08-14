@@ -27,7 +27,8 @@ class BottledRequests(object):
 
     @cherrypy.tools.accept(media='text/plain')
     def POST(self, text):
-        handler.submit(text)
+        uuid = handler.submit(text)
+        return uuid
 
     def DELETE(self):
         pass
