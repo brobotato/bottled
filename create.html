@@ -7,13 +7,16 @@
     <script src="/static/create.js"></script>
     <title>Write a message</title>
 </head>
-<div class="scroll">
+<div id="scroll">
     <input class="submit" id="left" type="image" src="static/scroll.png"/>
-    <div class="textdiv">
-        <input class="text" type="text" name="input">
+    <div id="textdiv">
+        <textarea class="text" id="text" name="input"></textarea>
     </div>
     <input class="submit" id="right" type="image" src="static/scroll.png"/>
 </div>
-<p id="result"></p>
+<div id="result">
+<p id ="link"></p>
+<image src="/static/bottled.png"/>
+</div>
 </body>
 </html>

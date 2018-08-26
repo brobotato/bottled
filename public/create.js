@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
 $(".submit").click(function(e) {
-  $.post("/submit", {"text": $("input[name='input']").val()})
+  $.post("/submit", {"text": $("textarea[name='input']").val()})
     .done(function(string) {
-      $("#result").show();
-      $("#result").html("<a href='" + window.location.protocol + "//" + window.location.hostname + ":"
+      $("#left").addClass("close");
+      $("#right").addClass("close");
+      $("#text").addClass("close");
+      $("#result").addClass("show");
+      $("#link").html("<a href='" + window.location.protocol + "//" + window.location.hostname + ":"
                         + window.location.port+ "/message?id=" + string + "'>" + window.location.hostname + ":"
                         + window.location.port+ "/message?id=" + string +"</a>");
     });
