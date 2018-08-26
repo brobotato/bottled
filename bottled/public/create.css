@@ -13,7 +13,7 @@
 #result.show{
     position: absolute;
     left: 33%;
-    top: 33%;
+    top: 20%;
     width: 33%;
     justify-content: center;
     text-align: center;
@@ -31,6 +31,7 @@
     animation: 2s ease-out 0s 1 openText;
     width: 500px;
     height: 223px;
+    resize: none;
     vertical-align: top;
     margin: 14px 0px 0px 0px;
     border-style: solid;
@@ -127,14 +128,17 @@
         visibility: visible;
         width: 0px;
         border-color: black;
+        color: black;
     }
     51%{
         width: 0px;
         border-color: white;
+        color: white;
     }
     100% {
         width: 0px;
         border-color: white;
+        color: white;
     }
 }
 @keyframes fadeIn {
@@ -147,4 +151,7 @@
     100% {
         opacity: 1;
     }
+}
+::-webkit-scrollbar {
+    width: 0px;
 }

@@ -29,8 +29,8 @@ class SQLHandler(object):
         uuid = self.uuid()
         while self.threaded_select(uuid).fetchall() != []:
             uuid = self.uuid()
-        self.conn.execute('''INSERT INTO messages (id, content) 
-                             VALUES (?, ?)''', [uuid, content])
+        self.conn.execute("""INSERT INTO messages (id, content) 
+                             VALUES (?, ?)""", [uuid, content])
         return uuid
 
     def threaded_insert(self):

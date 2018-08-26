@@ -1,5 +1,6 @@
 import os.path
-from sqlhandler import SQLHandler
+from bottled.sqlhandler import SQLHandler
+from bottled.message import generate_message
 
 import cherrypy
 
@@ -8,18 +9,18 @@ class Bottled(object):
 
     @cherrypy.expose
     def index(self):
-        return open('index.html')
+        return open('public/index.html')
 
     @cherrypy.expose
     def create(self):
-        return open('create.html')
+        return open('public/create.html')
 
     @cherrypy.expose
     def message(self, id='defaultid'):
         if handler.threaded_select(id).fetchall() != []:
-            return handler.threaded_select(id).fetchone()
+            return generate_message(handler.threaded_select(id).fetchone())
         else:
-            return open('index.html')
+            return open('public/index.html')
 
 
 @cherrypy.expose
