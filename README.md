@@ -2,18 +2,18 @@
 
 WIP Webapp using CherryPy, SQLite3, and... JQuery I guess.
 
-##Overview
+## Overview
 
 Bottled is a simple web app with a Python backend on CherryPy. It stores and serves messages through a SQL database.
 
-##Requirements
+## Requirements
 
 Bottled requires a fairly recent installation of CherryPy and SQLite3.
 
-##Setup
+## Setup
 
 Run [setup.py](./bottled/setup.py).
 
-##Get Started
+## Get Started
 
 Run [main.py](./bottled/main.py).
